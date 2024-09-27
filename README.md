@@ -12,3 +12,4 @@ Peek - reveals data from the “front” of the queue without removing it
 bounded queue = queue with a limit to the amount of data that can be added 
 
 Underflow = trying to remove elements from an empty queue.
+Overflow = trying to add an element to a queue that does not have room for more nodes because it is bounded

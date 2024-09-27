@@ -37,9 +37,13 @@ public class QueueMaxSize {
     }
 
     public void enqueue(String data) {
-        this.queue.addToTail(data);
-        this.size ++;
-        System.out.println("Added " + data + "! Queue size is now " + this.size);
+        if(this.hasSpace()) {
+            this.queue.addToTail(data);
+            this.size++;
+            System.out.println("Added " + data + "! Queue size is now " + this.size);
+        } else {
+            throw new Error("Queue is full!");
+        }
     }
 
     public String dequeue() {
@@ -69,12 +73,16 @@ public class QueueMaxSize {
         QueueMaxSize queue2 = new QueueMaxSize();
         System.out.println("This queue can have " + queue2.maxSize + " nodes");
 
+        System.out.println("");
+
         QueueMaxSize coffeeOrder = new QueueMaxSize();
         System.out.println("coffeeOrder queue has " + coffeeOrder.size + " orders.");
         coffeeOrder.enqueue("latte");
         coffeeOrder.enqueue("espresso");
         coffeeOrder.enqueue("cappuccino");
         coffeeOrder.peek();
+
+        System.out.println("");
 
         QueueMaxSize smoothieOrders = new QueueMaxSize();
         smoothieOrders.enqueue("strawberry banana");
@@ -102,6 +110,15 @@ public class QueueMaxSize {
         boundedQueue.dequeue();
         boundedQueue.dequeue();
         boundedQueue.dequeue();
+
+        System.out.println("");
+
+        QueueMaxSize boundedCoffeeQueue = new QueueMaxSize(3);
+        boundedCoffeeQueue.enqueue("latte");
+        boundedCoffeeQueue.enqueue("latte");
+        boundedCoffeeQueue.enqueue("latte");
+        boundedCoffeeQueue.enqueue("latte");
+        boundedCoffeeQueue.enqueue("latte");
 
     }
 }
