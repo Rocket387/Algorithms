@@ -1,4 +1,4 @@
-package org.example.Queues;
+package org.example;
 
 public class LinkedList {
 

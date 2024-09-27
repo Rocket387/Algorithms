@@ -1,5 +1,7 @@
 package org.example.Queues;
 
+import org.example.LinkedList;
+
 public class Queue {
 
     public LinkedList queue;

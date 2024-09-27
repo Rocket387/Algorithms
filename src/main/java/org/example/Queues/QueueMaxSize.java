@@ -1,5 +1,7 @@
 package org.example.Queues;
 
+import org.example.LinkedList;
+
 public class QueueMaxSize {
 
     public LinkedList queue;
