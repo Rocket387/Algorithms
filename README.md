@@ -5,7 +5,7 @@ linear search
 sorting
 
 
-Queues
+Queues First In First Out
 Enqueue - adds data to the “back” or end of the queue
 Dequeue - provides and removes data from the “front” or beginning of the queue
 Peek - reveals data from the “front” of the queue without removing it
@@ -20,3 +20,8 @@ Pop - removes and provides data from the top of the stack
 Peek - reveals data on the top of the stack
 StackOverflow - pushing data onto a full stack
 Last In, First Out
+
+
+If you need a data structure that provides O(1) access of the first element inserted then use a queue. 
+If you need O(1) access of the last element then use a stack. A queue is often associated with a breadth 
+first search while a stack is often utilized for depth first search.
