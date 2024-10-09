@@ -63,6 +63,7 @@ public class QueueMaxSize {
         if (this.isEmpty()) {
             return null;
         } else {
+            System.out.println("Head data: " + this.queue.head.data);
             return this.queue.head.data;
         }
 
@@ -110,14 +111,11 @@ public class QueueMaxSize {
         boundedQueue.enqueue("three");
         boundedQueue.dequeue();
         boundedQueue.dequeue();
-        boundedQueue.dequeue();
-        boundedQueue.dequeue();
+        boundedQueue.peek();
 
         System.out.println("");
 
         QueueMaxSize boundedCoffeeQueue = new QueueMaxSize(3);
-        boundedCoffeeQueue.enqueue("latte");
-        boundedCoffeeQueue.enqueue("latte");
         boundedCoffeeQueue.enqueue("latte");
         boundedCoffeeQueue.enqueue("latte");
         boundedCoffeeQueue.enqueue("latte");

@@ -19,21 +19,48 @@ public class Stack {
         this.maxSize = maxSize;
     }
 
+    public boolean hasSpace() {
+        if(this.size < this.maxSize) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isEmpty() {
+        if(this.size == 0) {
+            return true;
+        }
+        return false;
+    }
+
     public void push(String data) {
-        this.stack.addToHead(data);
-        this.size++;
-        System.out.println("Added " + data + "! Stack size is now " + this.size);
+        if(this.hasSpace()) {
+            this.stack.addToHead(data);
+            this.size++;
+            System.out.println("Added " + data + "! Stack size is now " + this.size);
+        }
     }
 
     public String pop() {
-        String data = this.stack.removeHead();
-        this.size--;
-        System.out.println("Removed " + data + "! Stack size is now " + this.size);
-        return data;
+        if(!this.isEmpty()) {
+            String data = this.stack.removeHead();
+            this.size--;
+            System.out.println("Removed " + data + "! Stack size is now " + this.size);
+            return data;
+        } else {
+            throw new Error("Stack is empty!");
+        }
     }
 
     public String peek() {
+
+        if (this.stack.head == null) {
+            return null; // or throw an exception depending on the requirement
+        }
+        System.out.println("Head data: " + this.stack.head.data);
         return this.stack.head.data;
+
     }
 
     public static void main(String[] args) {
@@ -60,6 +87,18 @@ public class Stack {
         Jewellery.pop();
 
         Jewellery.peek();
+
+        System.out.println("");
+
+        Stack carsInDriveway = new Stack();
+        carsInDriveway.push("Van");
+        carsInDriveway.push("Convertible");
+        carsInDriveway.peek();
+
+        carsInDriveway.pop();
+        carsInDriveway.pop();
+
+        carsInDriveway.peek();
 
     }
 }

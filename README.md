@@ -20,8 +20,20 @@ Pop - removes and provides data from the top of the stack
 Peek - reveals data on the top of the stack
 StackOverflow - pushing data onto a full stack
 Last In, First Out
+A stack without a maximum size limit can experience underflow, but not overflow. 
+A stack with a maximum size limit can experience both underflow and overflow.
 
 
 If you need a data structure that provides O(1) access of the first element inserted then use a queue. 
 If you need O(1) access of the last element then use a stack. A queue is often associated with a breadth 
 first search while a stack is often utilized for depth first search.
+
+Hash map
+A key-value store that uses an array and a hashing function to save and retrieve values.
+Key: The identifier given to a value for later retrieval.
+Hash function: A function that takes some input and returns a number.
+Compression function: A function that transforms its inputs into some smaller range of possible outputs.
+The underlying data structure that hash maps use is an
+Preview: Docs Stores elements of various data types in an ordered collection.
+array
+.
