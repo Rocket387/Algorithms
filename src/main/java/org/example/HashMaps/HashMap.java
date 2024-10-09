@@ -1,5 +1,7 @@
 package org.example.HashMaps;
 
+import java.util.Arrays;
+
 public class HashMap {
     public String[] hashmap;
 
@@ -29,10 +31,31 @@ public class HashMap {
         return hashCode;
     }
 
+    //Handles logic needed to take in a key-value pair and store the value
+    //at a particular index
+    public void assign(String key, String value) {
+        int arrayIndex = this.hash(key);
+        this.hashmap[arrayIndex] = value;
+    }
+
+    //retrieves values being stored
+    public String retrieve(String key) {
+        int arrayIndex = this.hash(key);
+        return this.hashmap[arrayIndex];
+    }
+
     public static void main(String[] args) {
         HashMap newHashMap = new HashMap(3);
         System.out.println(newHashMap.hash("c"));
         System.out.println(newHashMap.hash("ca"));
         System.out.println(newHashMap.hash("car"));
+
+        HashMap employees = new HashMap(3);
+        employees.assign("34-567", "Mara");
+        System.out.println(Arrays.toString(employees.hashmap));
+
+        HashMap aboutMe = new HashMap(3);
+        aboutMe.assign("myFavoriteColor", "brown");
+        System.out.println(aboutMe.retrieve("myFavoriteColor"));
     }
 }
