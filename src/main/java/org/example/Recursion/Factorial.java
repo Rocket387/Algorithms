@@ -13,7 +13,8 @@ public class Factorial {
         }
         //base case (n == 0) (0! = 1)
         {
-        return 1;
+            return 1;
+        }
     }
 
     public static void main(String[] args) {
