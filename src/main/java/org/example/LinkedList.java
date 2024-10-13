@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class LinkedList {
 
 
@@ -7,6 +9,19 @@ public class LinkedList {
 
     public LinkedList() {
         this.head = null;
+    }
+
+    public Node findNodeIteratively(String data) {
+        Node currentNode = this.head;
+
+        while (currentNode != null) {
+            if (currentNode.data == data) {
+                return currentNode;
+            }
+            currentNode = currentNode.getNextNode();
+        }
+
+        return null;
     }
 
     public void addToHead(String data) {
@@ -48,5 +63,35 @@ public class LinkedList {
         }
         output += "<tail>";
         return output;
+    }
+
+    public Node findNodeRecursively(String data, Node currentNode) {
+        if (currentNode == null) {
+            return null; //base case return null if end of LL is reached
+        } else if(Objects.equals(currentNode.data, data)){
+            return currentNode; //base case 2 return current node if data value matches data rgument
+        } else {
+            return findNodeRecursively(data, currentNode.getNextNode()); //recursive case
+        }
+
+    }
+
+    public static void main(String[] args) {
+        LinkedList myList = new LinkedList();
+
+        myList.addToHead("Node 1");
+        myList.addToTail("Node 2");
+        myList.addToTail("Node 3");
+        System.out.println(myList.toString());
+
+        Node foundNode = myList.findNodeIteratively("Node 3");
+        System.out.println(foundNode.data);
+
+        System.out.println("\n");
+
+        Node foundNode2 = myList.findNodeRecursively("Node 2", myList.head);
+        System.out.println(foundNode2.data);
+
+
     }
 }
