@@ -35,5 +35,10 @@ Hash function: A function that takes some input and returns a number.
 Compression function: A function that transforms its inputs into some smaller range of possible outputs.
 The underlying data structure that hash maps use is an
 Preview: Docs Stores elements of various data types in an ordered collection.
-array
-.
+array.
+
+Recursion
+Recursion is a computational approach where a
+Preview: Docs A method is a small piece of code, usually defined in a class, that can be used outside the class and in other parts of the program.
+method
+calls itself from within its body.
