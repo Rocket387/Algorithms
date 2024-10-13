@@ -3,13 +3,17 @@ package org.example.Recursion;
 public class Factorial {
 
     public static int recursiveFactorial(int n) {
+
+        //if condition important as defines whether recursiveFactorial calls itself or not
+        //Recursive case
         if (n > 0) {
             System.out.println("Execution context: " + n);
 
-            recursiveFactorial(n - 1);
+            return n * recursiveFactorial(n - 1);
         }
-
-        return 0;
+        //base case (n == 0) (0! = 1)
+        {
+        return 1;
     }
 
     public static void main(String[] args) {
